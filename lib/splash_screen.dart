@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:edf/homa.dart';
-import 'package:edf/utils.dart';
+import 'package:edf/utils/app_dimension.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
