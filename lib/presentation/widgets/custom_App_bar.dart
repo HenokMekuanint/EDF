@@ -10,58 +10,67 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           SizedBox(
             height: AppDimension.height(3, context),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                    margin: EdgeInsets.symmetric(horizontal: 15),
-                    padding: EdgeInsets.symmetric(horizontal: 15),
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFEDECF2),
-                      borderRadius: BorderRadius.circular(30),
-                      
-    
-                    ),
-    
-                    child: Row(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(left: 5),
-                          height: 50,
-                          width: 250,
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                               border: InputBorder.none,
-                               hintText: "Search here..."
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                      margin: EdgeInsets.symmetric(horizontal: AppDimension.width(15, context)),
+                      padding: EdgeInsets.symmetric(horizontal: AppDimension.width(15, context)),
+                      height: AppDimension.height(40, context),
+                      decoration: BoxDecoration(
+                        color: Color(0xFFEDECF2),
+                        borderRadius: BorderRadius.circular(30),
+                        
+              
+                      ),
+              
+                      child: Row(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(left: AppDimension.width(5, context)),
+                            height: AppDimension.height(50, context),
+                            width: AppDimension.width(230, context),
+                            child: TextFormField(
+                              style: TextStyle(fontSize: AppDimension.height(15, context)),
+                              decoration: InputDecoration(
+                                 border: InputBorder.none,
+                                 hintText: "Search here..."
+                              ),
                             ),
                           ),
-                        ),
-
-                        GestureDetector(
-                          onTap: (){},
-                          child: Icon(
-                            Icons.search
-                          ),
-                        )
-                      ],
+          
+                         IconButton(
+                      icon: Icon(
+                        Icons.search,
+                        color: Colors.black,
+                        size: AppDimension.height(25, context),
+                      ), // Your icon at the end
+                      onPressed: () {
+                        // Handle the onPressed action here
+                        print('Menu Icon Pressed');
+                      },
                     ),
-                  ),
-    
-    
-    
-    
-    IconButton(
-                    icon: Icon(
-                      Icons.shopping_cart,
-                      color: Colors.black,
-                    ), // Your icon at the end
-                    onPressed: () {
-                      // Handle the onPressed action here
-                      print('Menu Icon Pressed');
-                    },
-                  ),
-            ],
+                        ],
+                      ),
+                    ),
+              
+              
+              
+              
+              IconButton(
+                      icon: Icon(
+                        Icons.shopping_cart,
+                        color: Colors.black,
+                        size: AppDimension.height(25, context),
+                      ), // Your icon at the end
+                      onPressed: () {
+                        // Handle the onPressed action here
+                        print('Menu Icon Pressed');
+                      },
+                    ),
+              ],
+            ),
           ),
 
           SizedBox(

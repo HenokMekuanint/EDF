@@ -59,12 +59,12 @@ class _scrollHomePageState extends State<scrollHomePage>
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+          padding: EdgeInsets.symmetric(horizontal: AppDimension.width(20, context), vertical: AppDimension.height(15, context)),
           child: Stack(
             children: [
               CarouselSlider.builder(
                 options: CarouselOptions(
-                  height: 200,
+                  height: AppDimension.height(250, context),
                   viewportFraction: 1,
                   autoPlay: true,
                   enableInfiniteScroll: true,
@@ -78,7 +78,7 @@ class _scrollHomePageState extends State<scrollHomePage>
                 ),
                 itemBuilder: (_, index, realIndex) {
                   return Container(
-                    height: 200,
+                    height: AppDimension.height(250, context),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       image: DecorationImage(
@@ -116,7 +116,7 @@ class _scrollHomePageState extends State<scrollHomePage>
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 20,
+                          fontSize: AppDimension.height(25, context),
                           fontWeight: FontWeight.w500),
                     ),
                     SizedBox(
@@ -127,7 +127,7 @@ class _scrollHomePageState extends State<scrollHomePage>
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 20,
+                          fontSize: AppDimension.height(18, context),
                           fontWeight: FontWeight.w500),
                     ),
                     SizedBox(
@@ -138,11 +138,11 @@ class _scrollHomePageState extends State<scrollHomePage>
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 15,
+                        fontSize: AppDimension.height(18, context),
                       ),
                     ),
                     SizedBox(
-                      height: AppDimension.height(5, context),
+                      height: AppDimension.height(15, context),
                     ),
                     AnimatedSmoothIndicator(
                       activeIndex: _activeDotIndex,
@@ -154,8 +154,8 @@ class _scrollHomePageState extends State<scrollHomePage>
                         dotDecoration: DotDecoration(
                           rotationAngle: 45.0,
                           color: Color(0xFFFFFFFF),
-                          width: 10,
-                          height: 10,
+                          width: AppDimension.height(10, context),
+                          height: AppDimension.height(10, context),
                         ),
                       ),
                     ),
@@ -166,7 +166,7 @@ class _scrollHomePageState extends State<scrollHomePage>
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+          padding:  EdgeInsets.symmetric(horizontal: AppDimension.width(13, context), vertical: AppDimension.height(20, context)),
           child: GridView.builder(
             physics: NeverScrollableScrollPhysics(),
             shrinkWrap: true,
@@ -174,7 +174,7 @@ class _scrollHomePageState extends State<scrollHomePage>
               crossAxisCount: 2,
               crossAxisSpacing: 20.0,
               mainAxisSpacing: 20.0,
-              mainAxisExtent: 290,
+              mainAxisExtent: AppDimension.height(340, context),
             ),
             itemCount: 8,
             itemBuilder: (BuildContext context, int index) {
@@ -191,7 +191,7 @@ class _scrollHomePageState extends State<scrollHomePage>
                       Stack(
                         children: [
                           Container(
-                            height: 180,
+                            height: AppDimension.height(220, context),
                             width: double.infinity,
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(20),
@@ -202,56 +202,58 @@ class _scrollHomePageState extends State<scrollHomePage>
                             ),
                           ),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               SizedBox(
-                                width: AppDimension.width(140, context),
+                                width: AppDimension.width(10, context),
                               ),
                               Icon(
                                 Icons.favorite_border,
                                 color: Colors.red,
+                                size: AppDimension.height(30, context),
                               )
                             ],
                           ),
                         ],
                       ),
                       Container(
-                        padding: EdgeInsets.only(top: 8),
+                        padding: EdgeInsets.only(top: AppDimension.height(10, context)),
                         child: Text(
                           " Product Title,",
                           style: TextStyle(
-                              fontSize: 18,
+                              fontSize: AppDimension.height(15, context),
                               color: Color(0xFF4C53A5),
                               fontWeight: FontWeight.bold),
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.only(top: 8),
+                        padding: EdgeInsets.only(top: AppDimension.height(10, context)),
                         child: Text(
                           truncateString("description",
                               (AppDimension.myDeviceWidth * 0.04).toInt()),
                           style:
-                              TextStyle(fontSize: 15, color: Color(0xFF4c53A5)),
+                              TextStyle(fontSize: AppDimension.height(15, context), color: Color(0xFF4c53A5)),
                         ),
                       ),
                       Container(
                         padding:
-                            EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+                            EdgeInsets.symmetric(vertical: AppDimension.height(12, context), horizontal: AppDimension.width(5, context)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               "\$55",
                               style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: AppDimension.height(20, context),
                                   fontWeight: FontWeight.bold,
                                   color: Color(0xFF4c53A5)),
                             ),
                             Container(
-                              height: 25,
-                              width: 100,
+                              height: AppDimension.height(30, context),
+                              width: AppDimension.width(90, context),
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.blue,
+                                  backgroundColor: Colors.black54,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10),
                                   ),
@@ -260,7 +262,7 @@ class _scrollHomePageState extends State<scrollHomePage>
                                 child: Text(
                                   "Add To Chart",
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 10),
+                                      color: Colors.white, fontSize: AppDimension.height(13, context)),
                                 ),
                               ),
                             )
@@ -279,88 +281,3 @@ class _scrollHomePageState extends State<scrollHomePage>
   }
 }
 
-
-
-
-
-
-// GestureDetector(
-//                     onTap: (){
-                      
-//                     },
-//                     child: Container(
-//                       padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-//                       margin: EdgeInsets.symmetric(vertical: 8, horizontal: 13),
-//                       decoration: BoxDecoration(
-//                           borderRadius: BorderRadius.circular(20),
-//                           color: Color(0XFFE6E6E6),
-//                           boxShadow: [
-//                             BoxShadow(
-//                                 color: Colors.black.withOpacity(0.4),
-//                                 spreadRadius: 1,
-//                                 blurRadius: 4)
-//                           ]),
-//                       child: Column(
-//                         children: [
-//                           Container(
-//                             height: 160,
-//                             width: double.infinity,
-//                                 child: ClipRRect(
-//                                   borderRadius: BorderRadius.circular(20),
-//                                   child: Image.asset(
-//                                     FoodImages[index],
-//                                     fit: BoxFit.cover,
-                                    
-//                                   ),
-//                                 ),
-//                           ),
-//                           SizedBox(height: 10,),
-//                           Row(
-//                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                             children: [
-//                               Column(
-//                                 children: [
-//                                   Text(
-//                                     truncateString("description", (AppDimension.myDeviceWidth*0.04).toInt()),
-//                                   ),
-                                  
-//                                 ],
-//                               ),
-                  
-//                               Text("18.5\$")
-//                             ],
-//                           ),
-//                   SizedBox(
-//                                       height: AppDimension.height(20, context),
-//                                     ),
-//                           Row(
-//                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                             children: [
-//                               CircleAvatar(
-//                                 backgroundColor: Colors.black,
-//                                 radius: AppDimension.height(15, context),
-//                                 child: Icon(
-//                                   Icons.favorite,
-//                                   color: Colors.white,
-//                                   size: AppDimension.height(20, context),
-//                                 ),
-//                               ),
-                  
-                                    
-//                               Container(
-//                                 width: 120,
-//                                 height: 35,
-//                                 child: ElevatedButton(
-                                  
-//                                 onPressed: (){}, 
-//                                 child:
-//                                 Text( truncateString("Add To Chart", (AppDimension.myDeviceWidth*0.04).toInt()) 
-//                                 ),
-//                                 ),
-//                               )
-//                             ],
-//                           )
-//                         ],
-//                       ),
-//                     ),
-//                   );
