@@ -1,3 +1,4 @@
+import 'package:edf/presentation/checkout/checkout.dart';
 import 'package:edf/presentation/scroll_home_page.dart';
 import 'package:edf/presentation/main_home_page.dart';
 import 'package:edf/presentation/auth/login/login_page.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: CheckoutMethodScreen(),
     );
   }
 }
