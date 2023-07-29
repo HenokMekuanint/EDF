@@ -232,169 +232,169 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
               //     )
               //   ],
               // ),
-              SizedBox(
-                height: 5,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    'Share :',
-                    style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Icon(
-                        Icons.facebook,
-                        size: 20,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Icon(
-                        FontAwesomeIcons.twitter,
-                        color: Colors.black,
-                        size: 20,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Icon(
-                        FontAwesomeIcons.facebookMessenger,
-                        color: Colors.black,
-                        size: 20,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Icon(
-                        FontAwesomeIcons.instagram,
-                        color: Colors.black,
-                        size: 20,
-                      )
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        buildNavItem("MORE INFO"),
-                        buildNavItem("DATA SHEET"),
-                        buildNavItem("REVIEWS"),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  if (selectedText == 'MORE INFO')
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: const Text(
-                        "Properties - Ethiopian Coffee is known for its unique flavors and aroma with a rich and bold taste that will satisfy coffee enthusiasts.",
-                        style: TextStyle(color: Colors.black87, fontSize: 18),
-                      ),
-                    ),
-                  if (selectedText == 'DATA SHEET')
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      height: 100,
-                      child: Table(
-                        border: TableBorder.all(color: Colors.grey),
-                        defaultColumnWidth: IntrinsicColumnWidth(),
-                        children: [
-                          TableRow(
-                            children: [
-                              Container(
-                                height: 30,
-                                child: TableCell(
-                                  child: Center(
-                                    child: Text('Composition'),
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 30,
-                                child: TableCell(
-                                  child: Center(
-                                    child: Text(' Ethiopian coffe'),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          TableRow(
-                            children: [
-                              Container(
-                                height: 30,
-                                child: TableCell(
-                                  child: Center(
-                                    child: Text('Styles'),
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 30,
-                                child: TableCell(
-                                  child: Center(
-                                    child: Text('Cotton'),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          TableRow(
-                            children: [
-                              Container(
-                                height: 30,
-                                child: TableCell(
-                                  child: Center(
-                                    child: Text('Properties'),
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 30,
-                                child: TableCell(
-                                  child: Center(
-                                    child: Text('Bold and aromatic'),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  if (selectedText == 'REVIEWS')
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black87,
-                        ),
-                        onPressed: () {},
-                        child: Text(
-                          "BE THE FIRST TO WRITE YOUR REVIEW!",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                ],
-              ),
+              // SizedBox(
+              //   height: 5,
+              // ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.start,
+              //   children: [
+              //     Text(
+              //       'Share :',
+              //       style: TextStyle(
+              //           color: Colors.black, fontWeight: FontWeight.bold),
+              //     ),
+              //     Row(
+              //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+              //       mainAxisSize: MainAxisSize.max,
+              //       children: [
+              //         SizedBox(
+              //           width: 10,
+              //         ),
+              //         Icon(
+              //           Icons.facebook,
+              //           size: 20,
+              //         ),
+              //         SizedBox(
+              //           width: 10,
+              //         ),
+              //         Icon(
+              //           FontAwesomeIcons.twitter,
+              //           color: Colors.black,
+              //           size: 20,
+              //         ),
+              //         SizedBox(
+              //           width: 10,
+              //         ),
+              //         Icon(
+              //           FontAwesomeIcons.facebookMessenger,
+              //           color: Colors.black,
+              //           size: 20,
+              //         ),
+              //         SizedBox(
+              //           width: 10,
+              //         ),
+              //         Icon(
+              //           FontAwesomeIcons.instagram,
+              //           color: Colors.black,
+              //           size: 20,
+              //         )
+              //       ],
+              //     ),
+              //   ],
+              // ),
+              // SizedBox(
+              //   height: 15,
+              // ),
+              // Column(
+              //   crossAxisAlignment: CrossAxisAlignment.stretch,
+              //   children: [
+              //     Container(
+              //       padding: const EdgeInsets.symmetric(horizontal: 10),
+              //       child: Row(
+              //         mainAxisAlignment: MainAxisAlignment.start,
+              //         children: [
+              //           buildNavItem("MORE INFO"),
+              //           buildNavItem("DATA SHEET"),
+              //           buildNavItem("REVIEWS"),
+              //         ],
+              //       ),
+              //     ),
+              //     const SizedBox(height: 8),
+              //     if (selectedText == 'MORE INFO')
+              //       Container(
+              //         padding: const EdgeInsets.symmetric(horizontal: 16),
+              //         child: const Text(
+              //           "Properties - Ethiopian Coffee is known for its unique flavors and aroma with a rich and bold taste that will satisfy coffee enthusiasts.",
+              //           style: TextStyle(color: Colors.black87, fontSize: 18),
+              //         ),
+              //       ),
+              //     if (selectedText == 'DATA SHEET')
+              //       Container(
+              //         padding: const EdgeInsets.symmetric(horizontal: 16),
+              //         height: 100,
+              //         child: Table(
+              //           border: TableBorder.all(color: Colors.grey),
+              //           defaultColumnWidth: IntrinsicColumnWidth(),
+              //           children: [
+              //             TableRow(
+              //               children: [
+              //                 Container(
+              //                   height: 30,
+              //                   child: TableCell(
+              //                     child: Center(
+              //                       child: Text('Composition'),
+              //                     ),
+              //                   ),
+              //                 ),
+              //                 Container(
+              //                   height: 30,
+              //                   child: TableCell(
+              //                     child: Center(
+              //                       child: Text(' Ethiopian coffe'),
+              //                     ),
+              //                   ),
+              //                 ),
+              //               ],
+              //             ),
+              //             TableRow(
+              //               children: [
+              //                 Container(
+              //                   height: 30,
+              //                   child: TableCell(
+              //                     child: Center(
+              //                       child: Text('Styles'),
+              //                     ),
+              //                   ),
+              //                 ),
+              //                 Container(
+              //                   height: 30,
+              //                   child: TableCell(
+              //                     child: Center(
+              //                       child: Text('Cotton'),
+              //                     ),
+              //                   ),
+              //                 ),
+              //               ],
+              //             ),
+              //             TableRow(
+              //               children: [
+              //                 Container(
+              //                   height: 30,
+              //                   child: TableCell(
+              //                     child: Center(
+              //                       child: Text('Properties'),
+              //                     ),
+              //                   ),
+              //                 ),
+              //                 Container(
+              //                   height: 30,
+              //                   child: TableCell(
+              //                     child: Center(
+              //                       child: Text('Bold and aromatic'),
+              //                     ),
+              //                   ),
+              //                 ),
+              //               ],
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //     if (selectedText == 'REVIEWS')
+              //       Container(
+              //         padding: const EdgeInsets.symmetric(horizontal: 16),
+              //         child: ElevatedButton(
+              //           style: ElevatedButton.styleFrom(
+              //             backgroundColor: Colors.black87,
+              //           ),
+              //           onPressed: () {},
+              //           child: Text(
+              //             "BE THE FIRST TO WRITE YOUR REVIEW!",
+              //             style: TextStyle(color: Colors.white),
+              //           ),
+              //         ),
+              //       ),
+              //   ],
+              // ),
             ],
           ),
         ),
