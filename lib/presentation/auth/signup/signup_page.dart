@@ -1,3 +1,4 @@
+import 'package:edf/presentation/auth/login/login_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../../utils/app_colors.dart';
@@ -67,12 +68,13 @@ class SignUpPage extends StatelessWidget {
                   top: AppDimension.height(20, context),
                 ),
                 padding: EdgeInsets.only(
-                    left: AppDimension.width(10, context),
-                    right: AppDimension.width(10, context),
+                    left: AppDimension.width(15, context),
+                    right: AppDimension.width(15, context),
+                    top: AppDimension.height(20, context),
                     bottom: AppDimension.height(40, context)),
                 decoration: BoxDecoration(
                   color: AppColors.bgLight.withOpacity(0.9),
-                  border: Border.all(),
+                  
                   borderRadius: BorderRadius.circular(
                     AppDimension.height(16, context),
                   ),
@@ -87,6 +89,7 @@ class SignUpPage extends StatelessWidget {
                         "First Name",
                         style: TextStyle(
                           color: AppColors.textBlackColor,
+                          fontWeight: FontWeight.w500,
                           fontSize: AppDimension.height(16, context),
                         ),
                       ),
@@ -95,7 +98,7 @@ class SignUpPage extends StatelessWidget {
                       ),
                       AppTextField(
                         hintText: "First Name",
-                        textEditingController: lastNameController,
+                        textEditingController: firstNameController,
                         icon: Icons.person,
                       ),
                       SizedBox(
@@ -104,6 +107,7 @@ class SignUpPage extends StatelessWidget {
                       Text(
                         "Last Name",
                         style: TextStyle(
+                          fontWeight: FontWeight.w500,
                           color: AppColors.textBlackColor,
                           fontSize: AppDimension.height(16, context),
                         ),
@@ -122,6 +126,7 @@ class SignUpPage extends StatelessWidget {
                       Text(
                         "Email",
                         style: TextStyle(
+                          fontWeight: FontWeight.w500,
                           color: AppColors.textBlackColor,
                           fontSize: AppDimension.height(16, context),
                         ),
@@ -140,6 +145,7 @@ class SignUpPage extends StatelessWidget {
                       Text(
                         "Password",
                         style: TextStyle(
+                          fontWeight: FontWeight.w500,
                           color: AppColors.textBlackColor,
                           fontSize: AppDimension.height(16, context),
                         ),
@@ -159,6 +165,7 @@ class SignUpPage extends StatelessWidget {
                       Text(
                         "Confirm Password",
                         style: TextStyle(
+                          fontWeight: FontWeight.w500,
                           color: AppColors.textBlackColor,
                           fontSize: AppDimension.height(16, context),
                         ),
@@ -235,10 +242,15 @@ class SignUpPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => LoginPage()));
+                                },
                                 child: Text("Login",
                                     style: TextStyle(
-                                        color: AppColors.bgDarkLight,
+                                        color: Colors.blue,
                                         fontSize:
                                             AppDimension.height(20, context),
                                         fontWeight: FontWeight.w600)),

@@ -21,6 +21,7 @@ class AppTextField extends StatelessWidget {
       // margin: EdgeInsets.only(
       //     left: AppDimension.height(20, context),
       //     right: AppDimension.height(20, context)),
+      height: AppDimension.height(60, context),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(AppDimension.height(15, context)),
           color: Colors.white,
