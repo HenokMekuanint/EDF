@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../utils/app_dimension.dart';
@@ -74,15 +73,20 @@ class _CheckoutMethodScreenState extends State<CheckoutMethodScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize:  Size.fromHeight(AppDimension.height(60, context)),
+        preferredSize: Size.fromHeight(AppDimension.height(60, context)),
         child: AppBar(
+          automaticallyImplyLeading: false,
           flexibleSpace: Container(
             decoration: const BoxDecoration(color: Color(0xFF7A9A1D)),
           ),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Icon(Icons.chevron_left),
+              GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(Icons.chevron_left)),
               Container(
                 margin: EdgeInsets.only(left: AppDimension.height(15, context)),
                 child: Text(
@@ -93,7 +97,7 @@ class _CheckoutMethodScreenState extends State<CheckoutMethodScreen> {
                 ),
               ),
               Container(
-                margin:  EdgeInsets.only(right: AppDimension.width(15, context)),
+                margin: EdgeInsets.only(right: AppDimension.width(15, context)),
                 child: Image.asset(
                   "assets/images/logo.png",
                   width: AppDimension.width(30, context),
@@ -111,7 +115,7 @@ class _CheckoutMethodScreenState extends State<CheckoutMethodScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-          SizedBox(height: AppDimension.height(30, context)),
+            SizedBox(height: AppDimension.height(30, context)),
             Stack(children: [
               Container(
                 height: AppDimension.height(160, context),
@@ -140,17 +144,17 @@ class _CheckoutMethodScreenState extends State<CheckoutMethodScreen> {
               " 1. CHECKOUT  METHOD",
               CheckoutMethodContent(),
             ),
-             SizedBox(height: AppDimension.height(5, context)),
+            SizedBox(height: AppDimension.height(5, context)),
             buildContent(
               "2. BILLING  INFORMATION",
               BillingInformationContent(),
             ),
-             SizedBox(height: AppDimension.height(5, context)),
+            SizedBox(height: AppDimension.height(5, context)),
             buildContent(
               "3. SHIPPING  INFORMATION",
               ShippingInformationContent(),
             ),
-             SizedBox(height: AppDimension.height(5, context)),
+            SizedBox(height: AppDimension.height(5, context)),
             buildContent(
               "4. PAYMENT  METHOD",
               PaymentMethodContent(),

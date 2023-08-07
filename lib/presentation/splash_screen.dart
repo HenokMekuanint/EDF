@@ -14,9 +14,9 @@ class _MyHomePageState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(Duration(seconds: 5), () {
-      Navigator.push(
+      Navigator.popAndPushNamed(
         context,
-        MaterialPageRoute(builder: (context) => scrollHomePage()),
+        '/login',
       );
     });
   }

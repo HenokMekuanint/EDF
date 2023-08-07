@@ -30,7 +30,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                           Container(
                             margin: EdgeInsets.only(left: AppDimension.width(5, context)),
                             height: AppDimension.height(50, context),
-                            width: AppDimension.width(230, context),
+                            width: AppDimension.width(200, context),
                             child: TextFormField(
                               style: TextStyle(fontSize: AppDimension.height(15, context)),
                               decoration: InputDecoration(

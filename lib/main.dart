@@ -20,7 +20,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ProductDetailPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => SplashScreen(),
+        '/login': (context) => LoginPage(),
+        '/signup': (context) => SignUpPage(),
+        '/home': (context) => Home(),
+        '/product_detail': (context) => const ProductDetailPage(),
+        '/checkout': (context) => CheckoutMethodScreen(),
+      },
     );
   }
 }
