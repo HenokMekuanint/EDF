@@ -130,7 +130,9 @@ class LoginPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.popAndPushNamed(context, '/home');
+                              },
                               child: Container(
                                 height: AppDimension.height(60, context),
                                 width: AppDimension.width(300, context),

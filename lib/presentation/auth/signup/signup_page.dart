@@ -74,7 +74,6 @@ class SignUpPage extends StatelessWidget {
                     bottom: AppDimension.height(40, context)),
                 decoration: BoxDecoration(
                   color: AppColors.bgLight.withOpacity(0.9),
-                  
                   borderRadius: BorderRadius.circular(
                     AppDimension.height(16, context),
                   ),
@@ -185,7 +184,9 @@ class SignUpPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.popAndPushNamed(context, '/home');
+                            },
                             child: Container(
                               height: AppDimension.height(60, context),
                               width: AppDimension.width(300, context),

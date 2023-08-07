@@ -1,8 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 
 import '../../utils/app_dimension.dart';
 
@@ -23,7 +21,9 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
         });
       },
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: AppDimension.height(12,context), horizontal: AppDimension.width(24, context)),
+        padding: EdgeInsets.symmetric(
+            vertical: AppDimension.height(12, context),
+            horizontal: AppDimension.width(24, context)),
         decoration: BoxDecoration(
           border: Border(
             bottom: BorderSide(
@@ -48,16 +48,22 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  PreferredSize(
-        preferredSize:  Size.fromHeight(AppDimension.height(60, context)),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(AppDimension.height(60, context)),
         child: AppBar(
+          automaticallyImplyLeading: false,
           flexibleSpace: Container(
             decoration: const BoxDecoration(color: Color(0xFF7A9A1D)),
           ),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Icon(Icons.chevron_left),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Icon(Icons.chevron_left_outlined),
+              ),
               Container(
                 margin: EdgeInsets.only(left: AppDimension.height(15, context)),
                 child: Text(
@@ -68,7 +74,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                 ),
               ),
               Container(
-                margin:  EdgeInsets.only(right: AppDimension.width(15, context)),
+                margin: EdgeInsets.only(right: AppDimension.width(15, context)),
                 child: Image.asset(
                   "assets/images/logo.png",
                   width: AppDimension.width(30, context),
@@ -82,7 +88,9 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding:  EdgeInsets.symmetric(horizontal: AppDimension.width(15, context), vertical: AppDimension.height(5, context)),
+          padding: EdgeInsets.symmetric(
+              horizontal: AppDimension.width(15, context),
+              vertical: AppDimension.height(5, context)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -163,7 +171,9 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                       borderRadius: BorderRadius.circular(5),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/checkout');
+                  },
                   child: Text("Add to Cart"),
                 ),
               ),

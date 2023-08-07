@@ -47,7 +47,7 @@ class _scrollHomePageState extends State<scrollHomePage>
 
   String truncateString(String text, int maxLength) {
     if (text.length > maxLength) {
-      return text.substring(0, maxLength) + "...";
+      return "${text.substring(0, maxLength)}...";
     } else {
       return text;
     }
@@ -85,19 +85,19 @@ class _scrollHomePageState extends State<scrollHomePage>
                         fit: BoxFit.cover,
                         image: AssetImage(promoImages[index]),
                       ),
-                      gradient: LinearGradient(
+                      gradient: const LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
-                          const Color(0x00000000),
-                          const Color(0xFF000000),
+                          Color(0x00000000),
+                          Color(0xFF000000),
                         ],
                       ),
                     ),
                     child: Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: Color.fromARGB(100, 0, 0, 0)),
+                          color: const Color.fromARGB(100, 0, 0, 0)),
                     ),
                   );
                 },
@@ -149,11 +149,11 @@ class _scrollHomePageState extends State<scrollHomePage>
                       count: 2,
                       effect: CustomizableEffect(
                         spacing: 5,
-                        activeDotDecoration: DotDecoration(
+                        activeDotDecoration: const DotDecoration(
                             color: Color(0xFF0D6DC4), rotationAngle: 45.0),
                         dotDecoration: DotDecoration(
                           rotationAngle: 45.0,
-                          color: Color(0xFFFFFFFF),
+                          color: const Color(0xFFFFFFFF),
                           width: AppDimension.height(10, context),
                           height: AppDimension.height(10, context),
                         ),
@@ -168,7 +168,7 @@ class _scrollHomePageState extends State<scrollHomePage>
         Padding(
           padding:  EdgeInsets.symmetric(horizontal: AppDimension.width(13, context), vertical: AppDimension.height(20, context)),
           child: GridView.builder(
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
@@ -179,10 +179,15 @@ class _scrollHomePageState extends State<scrollHomePage>
             itemCount: 8,
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    '/product_detail',
+                  );
+                },
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Color(0XFFE6E6E6),
+                    color: const Color(0XFFE6E6E6),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Column(
@@ -222,7 +227,7 @@ class _scrollHomePageState extends State<scrollHomePage>
                           " Product Title,",
                           style: TextStyle(
                               fontSize: AppDimension.height(15, context),
-                              color: Color(0xFF4C53A5),
+                              color: const Color(0xFF4C53A5),
                               fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -232,7 +237,7 @@ class _scrollHomePageState extends State<scrollHomePage>
                           truncateString("description",
                               (AppDimension.myDeviceWidth * 0.04).toInt()),
                           style:
-                              TextStyle(fontSize: AppDimension.height(15, context), color: Color(0xFF4c53A5)),
+                              TextStyle(fontSize: AppDimension.height(15, context), color: const Color(0xFF4c53A5)),
                         ),
                       ),
                       Container(
@@ -246,7 +251,7 @@ class _scrollHomePageState extends State<scrollHomePage>
                               style: TextStyle(
                                   fontSize: AppDimension.height(20, context),
                                   fontWeight: FontWeight.bold,
-                                  color: Color(0xFF4c53A5)),
+                                  color: const Color(0xFF4c53A5)),
                             ),
                             Container(
                               height: AppDimension.height(30, context),
